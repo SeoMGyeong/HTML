@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+/* 대표폰트 */
+@font-face {
+    font-family: 'MangoByeolbyeol';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoByeolbyeol.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}  
+
+
+
+/*강조 글꼴*/
+
+/*설명 글꼴*/
+
+
+/*제목 글꼴*/
+
+/* 영문, 한글폰트 따로가는게 더 예쁘다~~~ */

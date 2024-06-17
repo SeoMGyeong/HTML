@@ -1,0 +1,116 @@
+p. 503 좌석표만들기 2
+
+const memNum = prompt("참가 인원은 몇명인가요?");
+const colNum = prompt("한 줄에 몇명씩 앉나요?");
+const rowNum = memNum / colNum;
+
+document.write("<div class='table'><h2>좌석배정표</h2><ul>");
+
+for (let r = 0; r < rowNum; r++) {
+  for (let c = 1; c <= colNum; c++) {
+    let seatNo = r * colNum + c;
+    if (seatNo > memNum) break;
+    document.write("<li>좌석" + seatNo + " </li>");
+  }
+  document.write("<br>");
+}
+document.write("</ul></div>");
+
+-------p. 505 좌석표 표로 만들기----------------------------------------
+const memNum = prompt("참가 인원은 몇명인가요?");
+const colNum = prompt("한 줄에 몇명씩 앉나요?");
+const rowNum = memNum / colNum;
+
+document.write("<h2>좌석배정표</h2>");
+document.write("<table>");
+document.write("<tr>");
+for (let r = 0; r < rowNum; r++) {
+  for (let c = 1; c <= colNum; c++) {
+    let seatNo = r * colNum + c;
+    if (seatNo > memNum) break;
+    document.write("<td> 좌석" + seatNo + "</td>");
+  }
+  document.write("</tr>");
+}
+
+document.write("</table>");
+
+
+-----------------수강생들 랜덤으로 자리 지정----------------
+const colNum = 6;
+const rowNum = 3;
+const users = [
+  "김유미",
+  "김가영",
+  "김은솔",
+  "류강민",
+  "박민수",
+  "박주연",
+  "배채정",
+  "서민경",
+  "양연수",
+  "옥찬미",
+  "이다은",
+  "전보람",
+  "전현정",
+  "정다겸",
+  "추호연",
+  "하소영",
+  " ",
+  " ",
+];
+
+document.write("<div class='table'><h2>좌석배정표</h2>");
+document.write("<table>");
+document.write("<tr>");
+for (let r = 0; r < rowNum; r++) {
+  for (let c = 1; c <= colNum; c++) {
+    let seatNo = Math.floor(Math.random() * 17);
+
+    document.write("<td>" + users[seatNo] + "</td>");
+  }
+  document.write("</tr>");
+}
+document.write("</div>");
+document.write("</table>");
+
+
+---------p.513
+function addNumber(a, b) {
+  var num1 = a;
+  var num2 = b;
+  var sum = num1 + num2;
+  document.write("result: " + sum);
+}
+
+
+------ p.520
+
+var x = 10;
+
+function displayNumber() {
+  console.log("X is " + x);
+  console.log("Y is " + y);
+  var y = 20;
+}
+displayNumber();
+
+
+- 함수 선언의 다른 방식
+const x = 10;
+const y = 20;
+displayNumber = () => {
+  return console.log("X is " + x), console.log("Y is " + y);
+};
+
+-----
+
+(function (a, b) {
+  return document.write(a + b);
+})(10, 20);
+
+(a,b) => document.write(a,b);
+
+같은 함수임.
+
+-----

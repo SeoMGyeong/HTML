@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event</title>
+    <script src="event.js"></script>
+    <style>
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        width: 150px;
+        height: 40px;
+        border: 1px solid gray;
+        text-align: center;
+        line-height: 40px;
+        display: inline-block;
+      }
+
+      #result {
+        width: 600px;
+        height: 600px;
+        background-color: bisque;
+      }
+
+      #wrap {
+        width: 500px;
+        margin: auto;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .over {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+      }
+
+      .relative {
+        position: relative;
+      }
+
+      #desc {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li onclick="changeBg('Green')">Green</li>
+      <li onclick="changeBg('Orange')">Orange</li>
+      <li onclick="changeBg('Purple')">Purple</li>
+    </ul>
+    <div id="result"></div>
+
+    <div id="wrap">
+      <div class="relative">
+        <img
+          src="https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg"
+          alt="이미지"
+        />
+        <button class="over" id="open" onclick="openDesc()">
+          상세설명보기
+        </button>
+      </div>
+      <div id="desc" class="detail">
+        <p>
+          카이아섬 광장에서 진행되는 고양이 숨바꼭질 대회에 참가할 수 있도록 NPC
+          숨냥이가 특별한 훈련을 시작한다. 고양이 숨바꼭질 대회 챔피언인 NPC
+          숨냥이의 말에 따라 몸을 숨기거나 숨은 NPC를 찾는 등 퀘스트를 진행하면
+          냐옹이 코인을 획득할 수 있다. 냐옹이 코인은 데려가줘냥 얼굴과 쫑긋냥
+          헤어 코스튬 아이템 등 각종 아이템이 포함된 경품상자와 교환 가능하다.
+        </p>
+        <button id="close" onclick="closeDesc()">설명닫기</button>
+      </div>
+    </div>
+  </body>
+</html>
