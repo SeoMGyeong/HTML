@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>새창 띄우기</title>
+
+    <style>
+      #popupArea {
+        position: fixed;
+        width: 400px;
+        height: 300px;
+        padding: 100px;
+        background-color: aliceblue;
+        left: 100px;
+        top: 100px;
+        z-index: 5;
+      }
+
+      .vh1 {
+        height: 100vh;
+      }
+
+      #popupBg {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #00000088;
+        z-index: 4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="vh1"><a href="#top">위로가기</a></div>
+    <div class="vh1"><a href="#top">위로가기</a></div>
+    <div class="vh1"><a href="#top">위로가기</a></div>
+    <div class="vh1"><a href="#top">위로가기</a></div>
+
+    <!-- 레이어팝업 -->
+    <div id="popupBg"></div>
+    <div id="popupArea">
+      <h1>레이어 팝업</h1>
+      <p>여기에 팝업 내용을 표시합니다.</p>
+      <button onclick="layerClose()">닫기</button>
+      <!-- display:none; 사용해서 팝업 없애기 or 함수 사용해서 없애기 -->
+    </div>
+    <script>
+      function layerClose() {
+        document.querySelector("#popupBg").style.display = "none";
+        document.querySelector("#popupArea").style.display = "none";
+      }
+    </script>
+    <!-- 윈도우팝업 -->
+    <script>
+      window.open(
+        "popup.html",
+        "popup",
+        "width=500, height=400, left=100, top=100"
+      );
+      if (popup === null) {
+        alert("팝업이 차단되어있습니다. 팝업 차단을 해제해주세요.");
+      }
+    </script>
+  </body>
+</html>
